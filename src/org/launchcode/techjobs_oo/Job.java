@@ -95,4 +95,35 @@ public class Job {
     public int getId() {
         return id;
     }
+
+
+    public String toString() {
+        if (this.name == null || this.name == "") {
+            this.setName("Data not available");
+        }
+
+        if (employer.getValue() == null || employer.getValue().equals("")) {
+            this.employer.setValue("Data not available");
+        }
+
+        if (location.getValue() == null || location.getValue() == "") {
+            this.location.setValue("Data not available");
+        }
+
+        if (positionType.getValue() == null || positionType.getValue() == "") {
+            this.positionType.setValue("Data not available");
+        }
+
+        if (coreCompetency.getValue() == null || coreCompetency.getValue() == "") {
+            this.coreCompetency.setValue("Data not available");
+        }
+
+        return "\n" + "ID: "+ this.getId() + "\n" +
+                "Name: "+ this.getName() + "\n" +
+                "Employer: "+ this.getEmployer() + "\n" +
+                "Location: "+ this.getLocation() + "\n" +
+                "Position Type: "+ this.getPositionType() + "\n" +
+                "Core Competency: " + this.getCoreCompetency() + "\n";
+    }
+
 }
